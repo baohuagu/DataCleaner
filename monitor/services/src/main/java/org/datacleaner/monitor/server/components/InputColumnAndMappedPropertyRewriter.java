@@ -119,7 +119,7 @@ public class InputColumnAndMappedPropertyRewriter implements InputRewriter {
         if (input.data.isArray()) {
             final ArrayNode inputData = (ArrayNode)input.data;
             for (int i = 0; i < inputData.size(); i++) {
-                inputData.set(i++, mapDataObjectToInputColumnsByName(inputData.get(i), inputColProperties));
+                inputData.set(i, mapDataObjectToInputColumnsByName(inputData.get(i), inputColProperties));
             }
         } else {
             input.data = json.arrayNode().add(mapDataObjectToInputColumnsByName(input.data, inputColProperties));
